@@ -445,6 +445,87 @@ config LOGIWHEELS_FF
 	  - Logitech MOMO/MOMO 2
 	  - Logitech Formula Force EX
 
+config HID_LOGITECH_GSERIES
+	tristate "Logitech G-Series devices"
+	depends on HID
+	depends on USB
+	select NEW_LEDS
+	select LEDS_CLASS
+	help
+	Support for Logitech G-Series devices.
+
+	This option allows you to choose from a list of Logitech G-series devices.
+	If your keyboard has an LCD display, you will have to enable framebuffer
+	support (CONFIG_FB) to see it here.
+
+	If unsure, say N.
+
+	To compile this driver as a module, choose M here: the
+	module will be called hid-gcore.
+
+config LOGITECH_GFB
+	tristate
+	depends on HID_LOGITECH_GSERIES
+	depends on FB
+	select FB_DEFERRED_IO
+	select FB_SYS_FILLRECT
+	select FB_SYS_COPYAREA
+	select FB_SYS_IMAGEBLIT
+	select FB_SYS_FOPS
+	# select LCD_CLASS_DEVICE
+	# select BACKLIGHT_CLASS_DEVICE
+	# select BACKLIGHT_LCD_SUPPORT
+
+config LOGITECH_G110
+	tristate "Logitech G110 keyboard"
+	depends on HID_LOGITECH_GSERIES
+	help
+	  Say Y here if you have a Logitech G110 keyboard.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hid-g110.
+
+config LOGITECH_G13
+	tristate "Logitech G13 keyboard"
+	depends on HID_LOGITECH_GSERIES
+	depends on FB
+	select LOGITECH_GFB
+	help
+	  Say Y here if you have a Logitech G13 keyboard.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hid-g13.
+
+config LOGITECH_G15V2
+	tristate "Logitech G15 Version 2 keyboard"
+	depends on HID_LOGITECH_GSERIES
+	depends on FB
+	select LOGITECH_GFB
+	help
+	  Say Y here if you have a Logitech G15 Version 2 keyboard.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hid-g15v2.
+
+config LOGITECH_G19
+	tristate "Logitech G19 keyboard"
+	depends on HID_LOGITECH_GSERIES
+	depends on FB
+	select LOGITECH_GFB
+	help
+	  Say Y here if you have a Logitech G19 keyboard.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hid-g19.
+
 config HID_MAGICMOUSE
 	tristate "Apple Magic Mouse/Trackpad multi-touch support"
 	depends on HID

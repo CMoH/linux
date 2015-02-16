@@ -107,3 +107,11 @@ obj-$(CONFIG_USB_MOUSE)		+= usbhid/
 obj-$(CONFIG_USB_KBD)		+= usbhid/
 
 obj-$(CONFIG_I2C_HID)		+= i2c-hid/
+
+
+obj-$(CONFIG_HID_LOGITECH_GSERIES)	+= hid-gcore.o
+obj-$(CONFIG_LOGITECH_GFB)	+= hid-gfb.o
+obj-$(CONFIG_LOGITECH_G110)	+= hid-g110.o
+obj-$(CONFIG_LOGITECH_G13)	+= hid-g13.o
+obj-$(CONFIG_LOGITECH_G15V2)	+= hid-g15v2.o
+obj-$(CONFIG_LOGITECH_G19)	+= hid-g19.o
