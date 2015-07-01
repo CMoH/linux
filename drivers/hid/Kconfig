@@ -452,16 +452,16 @@ config HID_LOGITECH_GSERIES
 	select NEW_LEDS
 	select LEDS_CLASS
 	help
-	Support for Logitech G-Series devices.
+	  Support for Logitech G-Series devices.
 
-	This option allows you to choose from a list of Logitech G-series devices.
-	If your keyboard has an LCD display, you will have to enable framebuffer
-	support (CONFIG_FB) to see it here.
+	  This option allows you to choose from a list of Logitech G-series devices.
+	  If your keyboard has an LCD display, you will have to enable framebuffer
+	  support (CONFIG_FB) to see it here.
 
-	If unsure, say N.
+	  If unsure, say N.
 
-	To compile this driver as a module, choose M here: the
-	module will be called hid-gcore.
+	  To compile this driver as a module, choose M here: the
+	  module will be called hid-gcore.
 
 config LOGITECH_GFB
 	tristate
